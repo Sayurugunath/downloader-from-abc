@@ -30,11 +30,11 @@ We provide screenshots illustrating the application's clean, high-contrast visua
 
 | Main Dashboard | Format Selection |
 | :---: | :---: |
-| ![Main Dashboard](docs/screenshots/main-ui.png) | ![Format Selection](docs/screenshots/format-selection.png) |
+| ![Main Dashboard](./docs/screenshots/main-ui.png) | ![Format Selection](./docs/screenshots/format-selection.png) |
 
 | Active Downloads | Settings Configuration |
 | :---: | :---: |
-| ![Active Downloads](docs/screenshots/downloading.png) | ![Settings Configuration](docs/screenshots/settings.png) |
+| ![Active Downloads](./docs/screenshots/downloading.png) | ![Settings Configuration](./docs/screenshots/settings.png) |
 
 ---
 
