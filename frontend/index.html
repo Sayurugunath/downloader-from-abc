@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Downloader from ABC
+    </title>
+
+    <link rel="icon" type="image/png" href="/assets/logo-icon.png">
+    <link rel="apple-touch-icon" href="/assets/logo-icon.png">
+
+    <link
+        rel="stylesheet"
+        href="/style.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="app">
+
+
+    <!-- ================================= -->
+    <!-- NAV -->
+    <!-- ================================= -->
+
+    <nav class="navbar">
+
+        <div class="brand">
+
+            <img src="/assets/logo-icon.png" alt="" class="brand-logo-img">
+
+            <div>
+                Downloader from ABC
+            </div>
+
+        </div>
+
+
+        <div class="nav-actions">
+            <div
+                id="serverStatus"
+                class="nav-status is-checking"
+                role="status"
+                aria-live="polite"
+            >
+
+                <span class="status-dot"></span>
+
+                <span id="serverStatusText">
+                    Server: Checking...
+                </span>
+
+            </div>
+
+            <button
+                id="settingsButton"
+                class="settings-button"
+                type="button"
+                aria-label="Open settings"
+                aria-haspopup="dialog"
+                aria-controls="settingsPanel"
+            >
+                <span aria-hidden="true">⚙</span>
+                <span>Settings</span>
+            </button>
+        </div>
+
+    </nav>
+
+
+
+    <!-- ================================= -->
+    <!-- HERO -->
+    <!-- ================================= -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-logo-container">
+                <img src="/assets/logo.png" alt="Downloader from ABC Logo" class="hero-logo">
+            </div>
+
+            <h1>
+
+                Download anything.<br>
+
+                <span>
+                    One link. One place.
+                </span>
+
+            </h1>
+
+
+            <p class="hero-subtitle">
+
+                Paste a video URL and choose
+                the quality you want.
+                Simple, fast, and clean.
+
+            </p>
+
+
+            <div class="search-box">
+
+                <div class="url-icon">
+                    🔗
+                </div>
+
+
+                <input
+                    id="url"
+                    type="text"
+                    autocomplete="off"
+                    placeholder="Paste video URL..."
+                >
+
+
+                <button
+                    id="analyzeButton"
+                    class="analyze-button"
+                    onclick="analyze()"
+                >
+
+                    ANALYZE
+
+                </button>
+
+            </div>
+
+
+            <div id="status"></div>
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- RESULT -->
+        <!-- ================================= -->
+
+        <section id="result">
+
+            <div class="video-card">
+
+
+                <div class="video-header">
+
+
+                    <div class="thumbnail-wrap">
+
+                        <img
+                            id="thumbnail"
+                            class="thumbnail"
+                            alt="Video thumbnail"
+                        >
+
+                    </div>
+
+
+                    <div class="video-details">
+
+                        <h2
+                            id="title"
+                            class="video-title"
+                        ></h2>
+
+
+                        <div class="video-meta">
+
+                            <span
+                                id="uploader"
+                                class="meta-pill"
+                            ></span>
+
+
+                            <span
+                                id="duration"
+                                class="meta-pill"
+                            ></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- VIDEO -->
+
+                <div class="download-section">
+
+                    <div class="section-header">
+
+                        <h3 class="section-title">
+                            Video quality
+                        </h3>
+
+
+                        <span class="section-note">
+                            Best available formats
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        id="qualities"
+                        class="format-grid"
+                    ></div>
+
+                </div>
+
+
+
+                <!-- AUDIO -->
+
+                <div class="download-section">
+
+                    <div class="section-header">
+
+                        <h3 class="section-title">
+                            Audio
+                        </h3>
+
+
+                        <span class="section-note">
+                            Audio-only formats
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        id="audio"
+                        class="audio-grid"
+                    ></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================= -->
+        <!-- DOWNLOAD MANAGER -->
+        <!-- ================================= -->
+
+        <section class="downloads-section">
+
+
+            <div class="downloads-header">
+
+                <div>
+
+                    <h2>
+                        Downloads
+                    </h2>
+
+                    <p>
+                        Active and recent downloads
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="clear-history-button"
+                    onclick="clearHistory()"
+                >
+                    CLEAR HISTORY
+                </button>
+
+            </div>
+
+
+            <div
+                id="downloads"
+                class="downloads-list"
+            ></div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ================================= -->
+    <!-- FOOTER -->
+    <!-- ================================= -->
+
+    <footer class="footer">
+
+        Downloader from ABC · Developed by <strong>Sayuru Gunathilaka</strong>
+
+    </footer>
+
+
+</div>
+
+
+<div
+    id="settingsPanel"
+    class="settings-overlay"
+    hidden
+>
+    <section
+        class="settings-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="settingsTitle"
+    >
+        <div class="settings-header">
+            <div>
+                <p class="settings-eyebrow">DOWNLOADER FROM ABC PREFERENCES</p>
+                <h2 id="settingsTitle">Settings</h2>
+                <p>Make every download feel like yours.</p>
+            </div>
+            <button id="closeSettingsButton" class="settings-close" type="button" aria-label="Close settings">×</button>
+        </div>
+
+        <div class="settings-content">
+            <section class="settings-group">
+                <h3>Download defaults</h3>
+                <label class="settings-field">
+                    <span>Default video quality</span>
+                    <select id="defaultQualitySetting">
+                        <option value="auto">Auto</option>
+                        <option value="1080p">1080p</option>
+                        <option value="720p">720p</option>
+                        <option value="480p">480p</option>
+                        <option value="360p">360p</option>
+                    </select>
+                </label>
+                <label class="settings-field">
+                    <span>Default audio format</span>
+                    <select id="defaultAudioSetting">
+                        <option value="M4A">M4A</option>
+                        <option value="WEBM">WEBM</option>
+                    </select>
+                </label>
+                <label class="settings-toggle-row">
+                    <span><strong>Remember last selected quality</strong><small>Use your most recent video choice when available.</small></span>
+                    <input id="rememberQualitySetting" type="checkbox"><i></i>
+                </label>
+            </section>
+
+            <section class="settings-group">
+                <h3>Experience</h3>
+                <label class="settings-toggle-row">
+                    <span><strong>Download notifications</strong><small>Show a notification when a download finishes or fails.</small></span>
+                    <input id="notificationsSetting" type="checkbox"><i></i>
+                </label>
+                <label class="settings-toggle-row">
+                    <span><strong>Show download speed and ETA</strong><small>Display live transfer details in the download manager.</small></span>
+                    <input id="speedEtaSetting" type="checkbox"><i></i>
+                </label>
+                <label class="settings-field">
+                    <span>Theme</span>
+                    <select id="themeSetting">
+                        <option value="system">System</option>
+                        <option value="dark">Dark</option>
+                        <option value="light">Light</option>
+                    </select>
+                </label>
+            </section>
+
+            <section class="settings-group">
+                <h3>Storage</h3>
+                <label class="settings-toggle-row">
+                    <span><strong>Automatic temporary-file cleanup</strong><small>Remove old temporary and completed download files automatically.</small></span>
+                    <input id="autoCleanupSetting" type="checkbox"><i></i>
+                </label>
+            </section>
+        </div>
+    </section>
+</div>
+
+<div id="notificationToast" class="notification-toast" role="status" aria-live="polite"></div>
+
+
+<script src="/app.js"></script>
+
+</body>
+
+</html>

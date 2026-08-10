@@ -1,0 +1,47 @@
+name: Release Build
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build Windows Release Package
+    runs-on: windows-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+          python -m pip install pyinstaller Pillow
+
+      - name: Compile Windows Executable
+        run: |
+          python build.py
+
+      - name: Create Release ZIP Archive
+        shell: powershell
+        run: |
+          # Package the built EXE alongside the installer script and uninstaller script
+          Compress-Archive -Path dist\"Downloader from ABC.exe", install.ps1, uninstall.ps1 -DestinationPath "Downloader-from-ABC-Windows-v1.0.0.zip"
+
+      - name: Create Release and Upload Asset
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            Downloader-from-ABC-Windows-v1.0.0.zip
+            dist/Downloader from ABC.exe
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,15 @@
+FFmpeg License Notice
+======================
+
+This application distributes pre-compiled binaries of FFmpeg (ffmpeg.exe and ffprobe.exe) under the terms of the GNU General Public License (GPL) version 3.0.
+
+FFmpeg is a trademark of Fabrice Bellard, originator of the FFmpeg project.
+Downloader from ABC does not own or claim ownership of any FFmpeg source code or binaries.
+
+Redistribution and Compliance
+-----------------------------
+1. **Source Code:** The source code of FFmpeg is available for download at the official FFmpeg website: https://ffmpeg.org/download.html
+2. **License Terms:** The pre-compiled binaries distributed with this package are compiled using standard GPL configurations. You can find the full text of the GNU General Public License version 3.0 at: https://www.gnu.org/licenses/gpl-3.0.html
+3. **Modification:** The FFmpeg binaries are included in their original un-modified compiled formats as fetched from standard release builds.
+
+For developer information and compile configurations of FFmpeg, please visit: https://ffmpeg.org/
