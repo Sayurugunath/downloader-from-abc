@@ -28,13 +28,17 @@ Version: v1.0.0
 
 We provide screenshots illustrating the application's clean, high-contrast visual design, layout, and functionality:
 
-| Main Dashboard | Format Selection |
-| :---: | :---: |
-| ![Main Dashboard](./docs/screenshots/main-ui.png) | ![Format Selection](./docs/screenshots/format-selection.png) |
+### Main Dashboard
+![Main Dashboard](https://raw.githubusercontent.com/sayuru1/downloader-from-abc/main/docs/screenshots/main-ui.png)
 
-| Active Downloads | Settings Configuration |
-| :---: | :---: |
-| ![Active Downloads](./docs/screenshots/downloading.png) | ![Settings Configuration](./docs/screenshots/settings.png) |
+### Format Selection
+![Format Selection](https://raw.githubusercontent.com/sayuru1/downloader-from-abc/main/docs/screenshots/format-selection.png)
+
+### Active Downloads
+![Active Downloads](https://raw.githubusercontent.com/sayuru1/downloader-from-abc/main/docs/screenshots/downloading.png)
+
+### Settings Configuration
+![Settings Configuration](https://raw.githubusercontent.com/sayuru1/downloader-from-abc/main/docs/screenshots/settings.png)
 
 ---
 
