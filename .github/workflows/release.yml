@@ -38,7 +38,7 @@ jobs:
           Compress-Archive -Path dist\"Downloader from ABC.exe", install.ps1, uninstall.ps1 -DestinationPath "Downloader-from-ABC-Windows-v1.0.0.zip"
 
       - name: Create Release and Upload Asset
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           files: |
             Downloader-from-ABC-Windows-v1.0.0.zip
