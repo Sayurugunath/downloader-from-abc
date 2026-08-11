@@ -1,4 +1,4 @@
-# Downloader from ABC
+﻿# Downloader from ABC
 
 <p align="center">
   <img src="frontend/assets/logo.png" alt="Downloader from ABC Logo" width="160" style="border-radius: 32px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
@@ -29,16 +29,16 @@ Version: v1.0.0
 We provide screenshots illustrating the application's clean, high-contrast visual design, layout, and functionality:
 
 ### Main Dashboard
-![Main Dashboard](https://raw.githubusercontent.com/sayuru1/downloader-from-abc/main/docs/screenshots/main-ui.png)
+![Main Dashboard](./docs/screenshots/main-ui.png)
 
 ### Format Selection
-![Format Selection](https://raw.githubusercontent.com/sayuru1/downloader-from-abc/main/docs/screenshots/format-selection.png)
+![Format Selection](./docs/screenshots/format-selection.png)
 
 ### Active Downloads
-![Active Downloads](https://raw.githubusercontent.com/sayuru1/downloader-from-abc/main/docs/screenshots/downloading.png)
+![Active Downloads](./docs/screenshots/downloading.png)
 
 ### Settings Configuration
-![Settings Configuration](https://raw.githubusercontent.com/sayuru1/downloader-from-abc/main/docs/screenshots/settings.png)
+![Settings Configuration](./docs/screenshots/settings.png)
 
 ---
 
@@ -131,4 +131,5 @@ The compiled output is saved under `dist/Downloader from ABC.exe`.
 ## License
 
 Downloader from ABC is released under the [MIT License](LICENSE).
-Copyright © 2026 Sayuru Gunathilaka
+Copyright Â© 2026 Sayuru Gunathilaka
+
